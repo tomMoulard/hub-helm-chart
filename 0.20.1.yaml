@@ -1,0 +1,596 @@
+---
+# Source: hub-agent/templates/rbac/service-accounts.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: hub-agent-controller
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+---
+# Source: hub-agent/templates/rbac/service-accounts.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: hub-agent-auth-server
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+---
+# Source: hub-agent/templates/rbac/service-accounts.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: hub-agent-tunnel
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+---
+# Source: hub-agent/templates/admission-controller.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: hub-agent-certs
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+data:
+  cert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURUakNDQWphZ0F3SUJBZ0lRUW5vNmZVa3VaZ1pHWC9ESlNFY2N0akFOQmdrcWhraUc5dzBCQVFzRkFEQXIKTVNrd0p3WURWUVFERXlCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFnRncweQpNakEzTURFeE5UQXlOREphR0E4eU1USXlNRGN3TWpFMU1ESTBNbG93S3pFcE1DY0dBMVVFQXhNZ2FIVmlMV0ZuClpXNTBMV052Ym5SeWIyeHNaWEl1WkdWbVlYVnNkQzV6ZG1Nd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDajlNbyt6bnRnUEI3OGRLell2aFN0eTBaL29Kb25vWFlBQ2Z5RzFRcSsxY3d2dnR0dQpJTkgzMjZOVWR6dFJETVZtUmpTQnluSnY5Sk9iT2lJZmhKd0dvYVQrRUtDU21MUDVDL0gyYlFaWFBUbHp2V0c5CkpmQ1AwLzRsUndGL015VFJlQlBsWmdRL282cUt6ZURZai9wOHVEU2tRSUJTcVE1VnBqUXVJTFFNaGhvNkdCbUkKOHJDcC9ldWg4M1BGTWVyNnUrS3RqZ1o4cG9DU0U5MGtjTUM3eE8zV3dUcXBCejRjT2JGaVRhMXp2bTNsZTlYaQpJRElnYktyc3FJN2dGQjRPZDE4UDBTNXRFN0puK3RnTjdJSG5tNkZxU0IyN25PY0Q3cEYrOWdOT2kwNkY5YUE4CnZqYjIwdkhGMWdNSzRDekNOTzFia081V1E0dlY0SDIwOUFiUkFnTUJBQUdqYkRCcU1BNEdBMVVkRHdFQi93UUUKQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJdwpBREFyQmdOVkhSRUVKREFpZ2lCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFOCkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQWRwaW1JRTF1T1V0N0w4RWhyMzdYSnV4NDlEZUFMWVZPSit2d29CWTEKdDVRWEJVZ2FpKzRvSGk0U3oxaUhRQXJIK0tFQXJ4Y3RURm03WUlvOFN3RlRpRHdiYk0vcCswNWpuSUNCL1V3RgpJeEFKZ2VpaDRFS0hjY2ZmTDMzMmpZbEw2K3VWM05nSW1CazZhZVRXZSs0TXBZdEdtNmZOZjIwa2RHanVTTVBUCmZLaExqQW94a2hBMVE2M202UmFTK05TR2picy9FUkN5UXJvOTJTaDR1TGthLzBDMmRZNnh2cG1BUDQxMmo2ejEKWGk0MDdURU1KTVp0VWJKY2Q2eEJQdm9xMnhYOEhPMkNTNWlrNFV0Nm9SVWxyZHAwVFdsOTFKNE1xTzBFc0hzeQpaRVhvSXkrbC9Ib3RhTkVaUStzRHZ0WUlyaUJmajA3dUhDZGZQTVN0b2pWTEFRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==
+  key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBby9US1BzNTdZRHdlL0hTczJMNFVyY3RHZjZDYUo2RjJBQW44aHRVS3Z0WE1MNzdiCmJpRFI5OXVqVkhjN1VRekZaa1kwZ2NweWIvU1Rtem9pSDRTY0JxR2svaENna3BpeitRdng5bTBHVnowNWM3MWgKdlNYd2o5UCtKVWNCZnpNazBYZ1Q1V1lFUDZPcWlzM2cySS82ZkxnMHBFQ0FVcWtPVmFZMExpQzBESVlhT2hnWgppUEt3cWYzcm9mTnp4VEhxK3J2aXJZNEdmS2FBa2hQZEpIREF1OFR0MXNFNnFRYytIRG14WWsydGM3NXQ1WHZWCjRpQXlJR3lxN0tpTzRCUWVEbmRmRDlFdWJST3laL3JZRGV5QjU1dWhha2dkdTV6bkErNlJmdllEVG90T2hmV2cKUEw0Mjl0THh4ZFlEQ3VBc3dqVHRXNUR1VmtPTDFlQjl0UFFHMFFJREFRQUJBb0lCQURDNzJrSEE3anMwbzZFMgpyUW5mdGhYU2ppbnhldUM4eFc1Tmlab3FTUDlnWFVqejJoVnArLzlJY2N2eGhOZ2FpN0pTdTlpNGJEdUszelVNCm1vZnp5c3pOejFVVmJDVW03cGZnVFJPS1pKQVp5ckgwWU5Ed0xna1NZa0NDVXBlVWhDVWZKQXJUdi8rS2ptNmoKczJtcm9qRGdNQVdDaHFJTFRnOTNUNXRHYlQ0clJGcTg5akJXL1o4REV2Nm1qYWVSSUpFMjV1RjBHMVhSdjhHYgpmejVSSHo3MHZzNzk3TVJjalN1VDNKSU5OSk5IMVlHRUhyRHVGK1NnWjBRdjROWkRPSEk2d2pDeXZSNm04SzY1ClFrcVVEeUhKNkxSNTIyZ3NiazlncmRUWjQ4Y1ZPTnR1V0FGVk1ndkErVmR6eUZneTZVUktTWXVmeURCUGlsbVoKSjZXQzZXRUNnWUVBMGt3b08wR0FSV0dTS1ZHazZvbGpaSFpRdlg4aktSNGJCaER0R1FOazh3NndlSXBrRGxxUwpIRUdSVDM1OGxkWEtpOFFjTkN6OHBDU3cxT3plTXk3T3lrYi9TODBvdW12dnF2eU1mTjlXb0FvODVoZlBmOE5GCjhEbkdzYS8rWmpkZHE5aWMydFgxZitKZmdRZGhtQ0o1SGVRa1Zyc3hlL21icllxeFZlRVV5MGNDZ1lFQXg1WnkKMmpiZmVDS3JPN2hlV3NvUmZtUW1TQlM1d2N5TmdnZXQ5T01lSVBEV3EwbXNaUEdBa2xoaVFhUXdDN3NFUmhnMApvUjJVSkVuWUVOQklDQ0xDK28zclBsSFdiTlpNVGNqZWhTOVgxTUJXNjBqRDVPaVNZbVZ6Z0h3Z0w5Z1Z4VnpUCk5OamtBV1dUQk1RcmRTaVlxV3lVUG5KcGZVdHEyeC90cEJ6bitTY0NnWUJ4ZHVXK0V2bENkZ0tHaUthU1pNNWIKeGZxS1E2NlU0TWx6M0c0UXNPUW13Q1kyNDNSWXlrVkxPWlZOYnRHSmhuQmlPTTErMlViMnlWVWZqUzNXTDhzagpHR3RtV3FzKzZqM0Y0NzFwSXBkNmdndVptZjg2MEFGTU8rQVl2dnhqNmp1QUhMK0UweXhDYzhGVHZNZkxiYzRyCmNveW92eGRUN0xreVNVS2xNMndrd1FLQmdCWlpyN1RtRGpKYTE0Z1JobWR1VjNVcTYrcUlmNkRITWxXTVhKdWUKejJIcTltOHFDZWNuOERqek10V2MrRkJuK2Z1TGZHRktlYXR5cFlLRWdIeUF3QXJrMTZJYjhnSXdJVTFZb0NxVAorYWIyZndWTUdidkptNUx2UDNiMDczbk1IZXdERUJmTDdnU0dCbWV6UEJhYm5EVGsxdGtEWVBMSi9rWlpsZmdaCjBKUmpBb0dCQUpXSDJpdkczOTNRS2p6azNySnJ2eWt2eUg3SmNtMkF6eVQ2UmFvUHlqU2d0V0szekhQWmdjWlEKcVJnbXFROUUxUmxSMnVTL28yWDRzZ2p0bjdNZGdsaWRJTm5VRDA5UE4zZEcrcXFyR2VBd1F4RXJkUldkUHFidwpWc0s1WW1JSHdFVHFmaDZqWllVd1NiMkMxR2dVZmxFdFdMR0ljdE1TRjIvTVF3VUtjOEZ6Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0t
+---
+# Source: hub-agent/templates/rbac/cluster-role-auth-server.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: hub-agent-auth-server
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+rules:
+  # Access Control RBACs.
+  - resources:
+      - accesscontrolpolicies
+    apiGroups:
+      - hub.traefik.io
+    verbs:
+      - list
+      - watch
+---
+# Source: hub-agent/templates/rbac/cluster-role-controller.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: hub-agent-controller
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+rules:
+  # Access Control RBACs.
+  - apiGroups:
+      - networking.k8s.io
+      - hub.traefik.io
+    resources:
+      - ingressclasses
+    verbs:
+      - list
+      - watch
+      - create
+  - apiGroups:
+      - hub.traefik.io
+    resources:
+      - accesscontrolpolicies
+      - edgeingresses
+    verbs:
+      - list
+      - watch
+      - create
+      - update
+      - delete
+  - apiGroups:
+      - traefik.containo.us
+    resources:
+      - middlewares
+    verbs:
+      - create
+      - get
+      - update
+      - delete
+  # Other RBACs.
+  - apiGroups:
+      - ""
+    resources:
+      - namespaces
+      - pods
+    verbs:
+      - list
+  - apiGroups:
+      - traefik.containo.us
+    resources:
+      - middlewares
+      - ingressroutes
+      - traefikservices
+      - ingressroutetcps
+      - ingressrouteudps
+      - tlsoptions
+      - tlsstores
+      - serverstransports
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - services
+      - endpoints
+      - namespaces
+      - pods
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - extensions
+      - networking.k8s.io
+    resources:
+      - ingresses
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - delete
+  - apiGroups:
+      - apps
+    resources:
+      - deployments
+      - statefulsets
+      - replicasets
+      - daemonsets
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - get
+      - list
+      - watch
+      - update
+      - create
+      - delete
+  - apiGroups:
+      - ""
+    resources:
+      - pods/log
+    verbs:
+      - get
+---
+# Source: hub-agent/templates/rbac/cluster-role-bindings.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: hub-agent-controller
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: hub-agent-controller
+subjects:
+  - kind: ServiceAccount
+    name: hub-agent-controller
+    namespace: default
+---
+# Source: hub-agent/templates/rbac/cluster-role-bindings.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: hub-agent-auth-server
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: hub-agent-auth-server
+subjects:
+  - kind: ServiceAccount
+    name: hub-agent-auth-server
+    namespace: default
+---
+# Source: hub-agent/templates/catch-all-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: hub-catch-all
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+    traefik.ingress.kubernetes.io/service.passhostheader: "false"
+spec:
+  ports:
+    - name: https
+      protocol: TCP
+      port: 443
+  type: ExternalName
+  externalName: hub-preview.traefik.io
+---
+# Source: hub-agent/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: hub-agent-controller
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+    hub.traefik.io/ingress-controller: none
+spec:
+  type: ClusterIP
+  ports:
+    - port: 443
+      name: hub-agent-webhook
+  selector:
+    app: hub-agent
+    component: controller
+---
+# Source: hub-agent/templates/services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: hub-agent-auth-server
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+    hub.traefik.io/ingress-controller: none
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      name: hub-agent-auth
+  selector:
+    app: hub-agent
+    component: auth-server
+---
+# Source: hub-agent/templates/deployment-auth-server.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hub-agent-auth-server
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+    hub.traefik.io/ingress-controller: none
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hub-agent
+      component: auth-server
+  template:
+    metadata:
+      labels:
+        app: hub-agent
+        component: auth-server
+      annotations:
+    spec:
+      serviceAccountName: hub-agent-auth-server
+      containers:
+        - name: hub-agent-auth-server
+          env:
+            - name: DISABLE_GIT_SSL_VERIFY
+              value: "true"
+          image: "ghcr.io/traefik/hub-agent-kubernetes:v0.4.1"
+          imagePullPolicy: Always
+          readinessProbe:
+            httpGet:
+              path: /_ready
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 20
+          livenessProbe:
+            httpGet:
+              path: /_live
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 20
+          resources:
+          args:
+            - auth-server
+            - --listen-addr=:80
+            - "--log-level=debug"
+---
+# Source: hub-agent/templates/deployment-controller.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hub-agent-controller
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+  annotations:
+    hub.traefik.io/ingress-controller: none
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hub-agent
+      component: controller
+  template:
+    metadata:
+      labels:
+        app: hub-agent
+        component: controller
+      annotations:
+    spec:
+      serviceAccountName: hub-agent-controller
+      containers:
+        - name: hub-agent-controller
+          env:
+            - name: DISABLE_GIT_SSL_VERIFY
+              value: "true"
+          image: "ghcr.io/traefik/hub-agent-kubernetes:v0.4.1"
+          imagePullPolicy: Always
+          resources:
+          volumeMounts:
+            - mountPath: /var/run/hub-agent-kubernetes/
+              name: hub-certs
+          args:
+            - controller
+            - --token=plop
+            - --acp-server.listen-addr=:443
+            - --acp-server.cert=/var/run/hub-agent-kubernetes/cert.pem
+            - --acp-server.key=/var/run/hub-agent-kubernetes/key.pem
+            - --acp-server.auth-server-addr=http://hub-agent-auth-server.default.svc.cluster.local
+            
+            
+            - --traefik.metrics-url=http://traefik-hub.hub-agent.svc.cluster.local:9100/metrics
+            
+            
+            - "--log-level=debug"
+      volumes:
+        - name: hub-certs
+          secret:
+            secretName: hub-agent-certs
+            items:
+              - key: cert
+                path: cert.pem
+              - key: key
+                path: key.pem
+---
+# Source: hub-agent/templates/deployment-tunnel.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hub-agent-tunnel
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+    app.kubernetes.io/component: tunnel
+  annotations:
+    hub.traefik.io/ingress-controller: none
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hub-agent
+      component: tunnel
+  template:
+    metadata:
+      labels:
+        app: hub-agent
+        component: tunnel
+      annotations:
+    spec:
+      serviceAccountName: hub-agent-tunnel
+      containers:
+        - name: hub-agent-tunnel
+          image: "ghcr.io/traefik/hub-agent-kubernetes:v0.4.1"
+          imagePullPolicy: Always
+          resources:
+          args:
+            - tunnel
+            - --token=plop
+            - --traefik.tunnel-host=traefik-hub.hub-agent.svc.cluster.local
+            - --traefik.tunnel-port=9901
+            - "--log-level=debug"
+---
+# Source: hub-agent/templates/admission-controller.yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: hub-ingress
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+webhooks:
+  - name: hub-agent.default.svc
+    clientConfig:
+      service:
+        name: hub-agent-controller
+        namespace: default
+        path: /ingress
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURUakNDQWphZ0F3SUJBZ0lRUW5vNmZVa3VaZ1pHWC9ESlNFY2N0akFOQmdrcWhraUc5dzBCQVFzRkFEQXIKTVNrd0p3WURWUVFERXlCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFnRncweQpNakEzTURFeE5UQXlOREphR0E4eU1USXlNRGN3TWpFMU1ESTBNbG93S3pFcE1DY0dBMVVFQXhNZ2FIVmlMV0ZuClpXNTBMV052Ym5SeWIyeHNaWEl1WkdWbVlYVnNkQzV6ZG1Nd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDajlNbyt6bnRnUEI3OGRLell2aFN0eTBaL29Kb25vWFlBQ2Z5RzFRcSsxY3d2dnR0dQpJTkgzMjZOVWR6dFJETVZtUmpTQnluSnY5Sk9iT2lJZmhKd0dvYVQrRUtDU21MUDVDL0gyYlFaWFBUbHp2V0c5CkpmQ1AwLzRsUndGL015VFJlQlBsWmdRL282cUt6ZURZai9wOHVEU2tRSUJTcVE1VnBqUXVJTFFNaGhvNkdCbUkKOHJDcC9ldWg4M1BGTWVyNnUrS3RqZ1o4cG9DU0U5MGtjTUM3eE8zV3dUcXBCejRjT2JGaVRhMXp2bTNsZTlYaQpJRElnYktyc3FJN2dGQjRPZDE4UDBTNXRFN0puK3RnTjdJSG5tNkZxU0IyN25PY0Q3cEYrOWdOT2kwNkY5YUE4CnZqYjIwdkhGMWdNSzRDekNOTzFia081V1E0dlY0SDIwOUFiUkFnTUJBQUdqYkRCcU1BNEdBMVVkRHdFQi93UUUKQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJdwpBREFyQmdOVkhSRUVKREFpZ2lCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFOCkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQWRwaW1JRTF1T1V0N0w4RWhyMzdYSnV4NDlEZUFMWVZPSit2d29CWTEKdDVRWEJVZ2FpKzRvSGk0U3oxaUhRQXJIK0tFQXJ4Y3RURm03WUlvOFN3RlRpRHdiYk0vcCswNWpuSUNCL1V3RgpJeEFKZ2VpaDRFS0hjY2ZmTDMzMmpZbEw2K3VWM05nSW1CazZhZVRXZSs0TXBZdEdtNmZOZjIwa2RHanVTTVBUCmZLaExqQW94a2hBMVE2M202UmFTK05TR2picy9FUkN5UXJvOTJTaDR1TGthLzBDMmRZNnh2cG1BUDQxMmo2ejEKWGk0MDdURU1KTVp0VWJKY2Q2eEJQdm9xMnhYOEhPMkNTNWlrNFV0Nm9SVWxyZHAwVFdsOTFKNE1xTzBFc0hzeQpaRVhvSXkrbC9Ib3RhTkVaUStzRHZ0WUlyaUJmajA3dUhDZGZQTVN0b2pWTEFRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==
+    sideEffects: None
+    admissionReviewVersions:
+      - v1
+    rules:
+      - operations:
+          - CREATE
+          - UPDATE
+        apiGroups:
+          - extensions
+        apiVersions:
+          - v1beta1
+        resources:
+          - ingresses
+        scope: Namespaced
+      - operations:
+          - CREATE
+          - UPDATE
+        apiGroups:
+          - networking.k8s.io
+        apiVersions:
+          - v1beta1
+        resources:
+          - ingresses
+        scope: Namespaced
+      - operations:
+          - CREATE
+          - UPDATE
+        apiGroups:
+          - networking.k8s.io
+        apiVersions:
+          - v1
+        resources:
+          - ingresses
+        scope: Namespaced
+      - operations:
+          - CREATE
+          - UPDATE
+        apiGroups:
+          - traefik.containo.us
+        apiVersions:
+          - v1alpha1
+        resources:
+          - ingressroutes
+        scope: Namespaced
+---
+# Source: hub-agent/templates/admission-controller.yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: hub-edge-ingress
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+webhooks:
+  - name: hub-agent.default.svc
+    clientConfig:
+      service:
+        name: hub-agent-controller
+        namespace: default
+        path: /edge-ingress
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURUakNDQWphZ0F3SUJBZ0lRUW5vNmZVa3VaZ1pHWC9ESlNFY2N0akFOQmdrcWhraUc5dzBCQVFzRkFEQXIKTVNrd0p3WURWUVFERXlCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFnRncweQpNakEzTURFeE5UQXlOREphR0E4eU1USXlNRGN3TWpFMU1ESTBNbG93S3pFcE1DY0dBMVVFQXhNZ2FIVmlMV0ZuClpXNTBMV052Ym5SeWIyeHNaWEl1WkdWbVlYVnNkQzV6ZG1Nd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDajlNbyt6bnRnUEI3OGRLell2aFN0eTBaL29Kb25vWFlBQ2Z5RzFRcSsxY3d2dnR0dQpJTkgzMjZOVWR6dFJETVZtUmpTQnluSnY5Sk9iT2lJZmhKd0dvYVQrRUtDU21MUDVDL0gyYlFaWFBUbHp2V0c5CkpmQ1AwLzRsUndGL015VFJlQlBsWmdRL282cUt6ZURZai9wOHVEU2tRSUJTcVE1VnBqUXVJTFFNaGhvNkdCbUkKOHJDcC9ldWg4M1BGTWVyNnUrS3RqZ1o4cG9DU0U5MGtjTUM3eE8zV3dUcXBCejRjT2JGaVRhMXp2bTNsZTlYaQpJRElnYktyc3FJN2dGQjRPZDE4UDBTNXRFN0puK3RnTjdJSG5tNkZxU0IyN25PY0Q3cEYrOWdOT2kwNkY5YUE4CnZqYjIwdkhGMWdNSzRDekNOTzFia081V1E0dlY0SDIwOUFiUkFnTUJBQUdqYkRCcU1BNEdBMVVkRHdFQi93UUUKQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJdwpBREFyQmdOVkhSRUVKREFpZ2lCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFOCkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQWRwaW1JRTF1T1V0N0w4RWhyMzdYSnV4NDlEZUFMWVZPSit2d29CWTEKdDVRWEJVZ2FpKzRvSGk0U3oxaUhRQXJIK0tFQXJ4Y3RURm03WUlvOFN3RlRpRHdiYk0vcCswNWpuSUNCL1V3RgpJeEFKZ2VpaDRFS0hjY2ZmTDMzMmpZbEw2K3VWM05nSW1CazZhZVRXZSs0TXBZdEdtNmZOZjIwa2RHanVTTVBUCmZLaExqQW94a2hBMVE2M202UmFTK05TR2picy9FUkN5UXJvOTJTaDR1TGthLzBDMmRZNnh2cG1BUDQxMmo2ejEKWGk0MDdURU1KTVp0VWJKY2Q2eEJQdm9xMnhYOEhPMkNTNWlrNFV0Nm9SVWxyZHAwVFdsOTFKNE1xTzBFc0hzeQpaRVhvSXkrbC9Ib3RhTkVaUStzRHZ0WUlyaUJmajA3dUhDZGZQTVN0b2pWTEFRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==
+    sideEffects: None
+    admissionReviewVersions:
+      - v1
+    rules:
+      - operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+        apiGroups:
+          - hub.traefik.io
+        apiVersions:
+          - v1alpha1
+        resources:
+          - edgeingresses
+        scope: Namespaced
+---
+# Source: hub-agent/templates/admission-controller.yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: hub-acp
+  namespace: default
+  labels:
+    app.kubernetes.io/name: hub-agent
+    helm.sh/chart: hub-agent-0.20.1
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: 0.20.1
+    app.kubernetes.io/instance: hub-agent
+webhooks:
+  - name: hub-agent.default.svc
+    clientConfig:
+      service:
+        name: hub-agent-controller
+        namespace: default
+        path: /acp
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURUakNDQWphZ0F3SUJBZ0lRUW5vNmZVa3VaZ1pHWC9ESlNFY2N0akFOQmdrcWhraUc5dzBCQVFzRkFEQXIKTVNrd0p3WURWUVFERXlCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFnRncweQpNakEzTURFeE5UQXlOREphR0E4eU1USXlNRGN3TWpFMU1ESTBNbG93S3pFcE1DY0dBMVVFQXhNZ2FIVmlMV0ZuClpXNTBMV052Ym5SeWIyeHNaWEl1WkdWbVlYVnNkQzV6ZG1Nd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUIKRHdBd2dnRUtBb0lCQVFDajlNbyt6bnRnUEI3OGRLell2aFN0eTBaL29Kb25vWFlBQ2Z5RzFRcSsxY3d2dnR0dQpJTkgzMjZOVWR6dFJETVZtUmpTQnluSnY5Sk9iT2lJZmhKd0dvYVQrRUtDU21MUDVDL0gyYlFaWFBUbHp2V0c5CkpmQ1AwLzRsUndGL015VFJlQlBsWmdRL282cUt6ZURZai9wOHVEU2tRSUJTcVE1VnBqUXVJTFFNaGhvNkdCbUkKOHJDcC9ldWg4M1BGTWVyNnUrS3RqZ1o4cG9DU0U5MGtjTUM3eE8zV3dUcXBCejRjT2JGaVRhMXp2bTNsZTlYaQpJRElnYktyc3FJN2dGQjRPZDE4UDBTNXRFN0puK3RnTjdJSG5tNkZxU0IyN25PY0Q3cEYrOWdOT2kwNkY5YUE4CnZqYjIwdkhGMWdNSzRDekNOTzFia081V1E0dlY0SDIwOUFiUkFnTUJBQUdqYkRCcU1BNEdBMVVkRHdFQi93UUUKQXdJRm9EQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJS3dZQkJRVUhBd0l3REFZRFZSMFRBUUgvQkFJdwpBREFyQmdOVkhSRUVKREFpZ2lCb2RXSXRZV2RsYm5RdFkyOXVkSEp2Ykd4bGNpNWtaV1poZFd4MExuTjJZekFOCkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQWRwaW1JRTF1T1V0N0w4RWhyMzdYSnV4NDlEZUFMWVZPSit2d29CWTEKdDVRWEJVZ2FpKzRvSGk0U3oxaUhRQXJIK0tFQXJ4Y3RURm03WUlvOFN3RlRpRHdiYk0vcCswNWpuSUNCL1V3RgpJeEFKZ2VpaDRFS0hjY2ZmTDMzMmpZbEw2K3VWM05nSW1CazZhZVRXZSs0TXBZdEdtNmZOZjIwa2RHanVTTVBUCmZLaExqQW94a2hBMVE2M202UmFTK05TR2picy9FUkN5UXJvOTJTaDR1TGthLzBDMmRZNnh2cG1BUDQxMmo2ejEKWGk0MDdURU1KTVp0VWJKY2Q2eEJQdm9xMnhYOEhPMkNTNWlrNFV0Nm9SVWxyZHAwVFdsOTFKNE1xTzBFc0hzeQpaRVhvSXkrbC9Ib3RhTkVaUStzRHZ0WUlyaUJmajA3dUhDZGZQTVN0b2pWTEFRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ==
+    sideEffects: None
+    admissionReviewVersions:
+      - v1
+    rules:
+      - operations:
+          - CREATE
+          - UPDATE
+          - DELETE
+        apiGroups:
+          - hub.traefik.io
+        apiVersions:
+          - v1alpha1
+        resources:
+          - accesscontrolpolicies
