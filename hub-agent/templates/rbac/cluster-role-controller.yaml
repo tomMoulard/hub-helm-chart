@@ -25,6 +25,7 @@ rules:
     resources:
       - accesscontrolpolicies
       - edgeingresses
+      - catalogs
     verbs:
       - list
       - watch
