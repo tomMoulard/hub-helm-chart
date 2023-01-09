@@ -40,10 +40,12 @@ spec:
             spec:
               description: The desired behavior of this catalog.
               properties:
-                customDomain:
-                  description: CustomDomain is the custom domain under which the API
-                    will be exposed.
-                  type: string
+                customDomains:
+                  description: CustomDomains are the custom domains under which the
+                    API will be exposed.
+                  items:
+                    type: string
+                  type: array
                 services:
                   description: Services are the list of Services available in the Catalog.
                   items:
@@ -69,23 +71,27 @@ spec:
             status:
               description: The current status of this catalog.
               properties:
-                domain:
-                  description: Domain is the domain of the Catalog API.
-                  type: string
+                domains:
+                  description: Domains are the domains of the Catalog API.
+                  items:
+                    type: string
+                  type: array
                 specHash:
                   description: SpecHash is a hash representing the CatalogSpec
                   type: string
                 syncedAt:
                   format: date-time
                   type: string
-                url:
-                  description: URL is the URL for accessing the Catalog API.
-                  type: string
+                urls:
+                  description: URLs are the URL for accessing the Catalog API.
+                  items:
+                    type: string
+                  type: array
                 version:
                   type: string
               required:
-                - domain
-                - url
+                - domains
+                - urls
               type: object
           type: object
       served: true
